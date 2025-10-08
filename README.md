@@ -1,41 +1,41 @@
-# IA Chat con Memoria y Voz 🎙️🤖
+# 🤖 IA Projects Suite — Chat, Web Scraper & Document Reader
 
-Este proyecto es un **asistente de inteligencia artificial con memoria** que combina:
+Este repositorio reúne **tres aplicaciones de inteligencia artificial** construidas con **Streamlit**, **LangChain**, **Ollama** y modelos locales como `mistral`.
 
-- **Streamlit**: Interfaz web interactiva.
-- **LangChain Ollama**: Modelo de lenguaje local `mistral`.
-- **SpeechRecognition**: Reconocimiento de voz para convertir audio a texto.
-- **pyttsx3**: Texto a voz para responder en audio.
-- **Memoria del chat**: Guarda la conversación anterior y la usa para generar respuestas más coherentes.
+Incluye:
 
----
+- 🎙️ **IA Chat con Voz y Memoria**
+- 🌐 **IA Web Scraper con FAISS**
+- 📘 **IA Document Reader & Q&A Bot**
 
-## Funcionalidades
-
-- Escucha tu voz y convierte tus preguntas en texto.
-- Responde usando un modelo de lenguaje (`mistral`) y reproduce la respuesta en audio.
-- Guarda todo el historial de conversación y lo muestra en la interfaz de Streamlit.
-- Interfaz web sencilla con Streamlit para interactuar de manera visual y auditiva.
+Cada herramienta aprovecha el poder del lenguaje natural para procesar texto, voz y documentos.
 
 ---
 
-## Requisitos
+## 🧩 Tecnologías principales
 
-- Python 3.10+
-- macOS, Windows o Linux con micrófono disponible.
-- Librerías de Python:
+- **Python 3.10+**
+- **Streamlit** — Interfaz web interactiva.
+- **LangChain + Ollama (Mistral)** — Lógica de IA y razonamiento local.
+- **SpeechRecognition + pyttsx3** — Reconocimiento y síntesis de voz.
+- **FAISS** — Motor de búsqueda semántica vectorial.
+- **BeautifulSoup** — Scraping de sitios web.
+- **PyPDF2** — Lectura de documentos PDF.
 
+---
 
+## ⚙️ Instalación general
 
 ```bash
-pip install streamlit SpeechRecognition pyttsx3 langchain_ollama
+pip install streamlit SpeechRecognition pyttsx3 langchain_ollama beautifulsoup4 faiss-cpu PyPDF2
+
 ```
 En macOS puede ser necesario instalar PortAudio para que pyaudio funcione:
 
 brew install portaudio
 pip install pyaudio
 
-## Uso
+## Uso Chat voz
 
 Clona el repositorio:
 ```bash
@@ -57,8 +57,9 @@ cd ia-chat-voz
 ## Estructura del proyecto
 ```bash
 voice_chat_app.py       # Script principal
+ai_docuemnt_reader.py   # Script principal
+ai_scraper_web_fais.py   # Script principal
 README.md               # Documentación
-requirements.txt        # Opcional, con librerías necesarias
 ```
 - Configuración del reconocimiento de voz y motor TTS
 
@@ -67,3 +68,25 @@ requirements.txt        # Opcional, con librerías necesarias
 - Motor de voz: pyttsx3 reproduce las respuestas de la IA en audio.
 
 - Memoria del chat: ChatMessageHistory de LangChain guarda la conversación durante la sesión de Streamlit.
+
+
+- Extrae texto de PDFs con PyPDF2.
+
+- Genera un resumen con IA.
+
+- Guarda embeddings en FAISS para consultas semánticas.
+
+- Responde preguntas sobre el documento.
+
+- Permite descargar el resumen generado.
+
+
+
+
+- Scrapea una web con BeautifulSoup.
+
+- Resume el contenido con Mistral.
+
+- Guarda los embeddings en FAISS.
+
+- Permite realizar preguntas sobre el contenido de la web
